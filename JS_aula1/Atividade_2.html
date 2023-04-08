@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AulaJS Atividade_2</title>
+</head>
+<body>
+    <script language="Javascript" type="text/Javascript">
+        let x = prompt("Digite um numero inteiro positivo:");
+        Math.round(x);
+        if (x > 0){
+        let primo = true;
+            for(let i = 2; i < x; i++){
+                if(x % i === 0)
+                primo = false;
+            }
+
+        if(primo){
+            alert(x + " é um número primo!")
+        } else{
+            alert(x + " não é um número primo :(")
+        }
+        } else{
+        alert("Esse não é um número inteiro válido, digite um novo número")
+        }
+        
+    </script>
+</body>
+</html>

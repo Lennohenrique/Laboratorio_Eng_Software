@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AulaJS Atividade_1</title>
+</head>
+<body>
+    <script language="Javascript" type="text/Javascript">
+        let tipo_dado = prompt("Digite um tipo de dado:");
+            if (confirm("Deseja verificar que tipo de dado é esse?")) {
+                let dado = typeof(tipo_dado);
+                if(dado == "number"){
+                document.write("O tipo do dado informado é um número");
+                }else if(dado == "string"){
+                    document.write("O tipo de dado informado é uma string")
+                }else if(dado == "boolean"){
+                    document.write("O tipo de dado informado é um booleano")
+                }else if(dado == "function"){
+                    document.write("O tipo de dado informado é uma função")
+                }
+                }else {
+                document.write("Obrigado por visitar esta página!!");
+                }
+                
+    </script>
+</body>
+</html>
