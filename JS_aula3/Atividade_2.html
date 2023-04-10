@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Aula3_atividade2</title>
+</head>
+<body>
+    <h1>Formulario para cadastro de veículos:</h1>
+	<form id="formulario">
+		<label for="marca">Marca:</label>
+		<input type="text" id="marca" name="marca"><br><br>
+
+		<label for="modelo">Modelo:</label>
+		<input type="text" id="modelo" name="modelo"><br><br>
+
+		<label for="ano">Ano:</label>
+		<input type="number" id="ano" name="ano"><br><br>
+
+		<label for="cor">Cor:</label>
+		<input type="text" id="cor" name="cor"><br><br>
+
+		<label for="kilometragem">Kilometragem:</label>
+		<input type="number" id="kilometragem" name="kilometragem"><br><br>
+
+		<label for="valor_fipe">Valor FIPE:</label>
+		<input type="number" id="valor_fipe" name="valor_fipe"><br><br>
+
+		<button type="submit" id="btn-cadastrar">Cadastrar</button>
+	</form>
+
+	<script>
+		const formulario = document.getElementById('formulario');
+		formulario.addEventListener('submit', (event) => {
+			event.preventDefault();
+			const carro = {
+				marca: formulario.marca.value,
+				modelo: formulario.modelo.value,
+				ano: formulario.ano.value,
+				cor: formulario.cor.value,
+				kilometragem: formulario.kilometragem.value,
+				valor_fipe: formulario.valor_fipe.value,
+				anos_utilizacao() {
+					const anos = new Date().getFullYear() - this.ano;
+					return anos;
+				},
+				valor_mercado() {
+					let valor_mercado = 0;
+					const anos = this.anos_utilizacao();
+					if (this.kilometragem <= 30000) {
+						valor_mercado = this.valor_fipe * 1.1;
+					} else if (this.kilometragem <= 50000) {
+						valor_mercado = this.valor_fipe;
+					} else {
+						valor_mercado = this.valor_fipe * 0.9;
+					}
+					return valor_mercado;
+				}
+			};
+
+			alert(`O carro ${carro.marca} ${carro.modelo}, ano ${carro.ano}, cor ${carro.cor}, com ${carro.kilometragem} km, tem ${carro.anos_utilizacao()} anos de utilização e seu valor de mercado é R$${carro.valor_mercado().toFixed(2)}.`);
+			formulario.reset();
+		});
+	</script>
+</body>
+</html>
