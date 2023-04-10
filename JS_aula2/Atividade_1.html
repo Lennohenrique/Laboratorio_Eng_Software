@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula2_Aividade1</title>
+</head>
+<body>
+    
+    <script language="Javascript'" type="text/Javascript">
+        let data = new Date();        
+        let semana = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado'];        
+        let meses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];        
+        let dia_semana = semana[data.getDay()];
+        let mes = meses[data.getMonth()];       
+        let dia = data.getDate();        
+        let ano = data.getFullYear();        
+        let data_atual = (dia_semana + ", " + dia +  " de " + mes + " de "  + ano);        
+        document.write(data_atual);       
+</script>
+
+</body>
+</html>

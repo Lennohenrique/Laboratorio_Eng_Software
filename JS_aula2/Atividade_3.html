@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula2_Aividade3</title>
+</head>
+<body>
+    <h1>Verificar Palíndromo</h1>
+    <p>Digite uma palavra</p>
+    <input type="text" id="texto">
+    <button onclick="palindromo()">Verificar</button>
+    <script>
+        function palindromo() {
+        let texto = document.getElementById("texto").value;
+        let texto_sem_espaco = texto.toLowerCase().replace(/[\W_]/g, "");
+        let texto_invertido = texto_sem_espaco.split("").reverse().join("");        
+            if (texto_sem_espaco === texto_invertido) {
+            alert(texto + ' é um palíndromo!');
+            } else {
+            alert(texto + ' não é um palíndromo.');
+            }
+        }
+
+    </script>
+</body>
+</html>
